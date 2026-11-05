@@ -2,8 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="{% static 'registration/style.css' %}">
+=======
+    {% load static %}
+>>>>>>> 9f40c6e4b841a32b9b0c81a60ce855e211056d99
     <title>Student Registration</title>
+    <link rel="stylesheet" href="{% static 'registration/style.css' %}">
 </head>
 <body>
 
@@ -11,7 +16,6 @@
 
     <form method="POST">
         {% csrf_token %}
-
         <label>Student ID:</label>
         <input type="text" name="student_id" required>
 
