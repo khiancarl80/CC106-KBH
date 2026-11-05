@@ -1,6 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'registration/style.css' %}">
     <title>Student Registration</title>
 </head>
 <body>
@@ -46,6 +48,12 @@
 
         <button type="submit">Register Student</button>
     </form>
+
+    <p>
+       <a href="{% url 'student_list' %}">
+            View Student Directory
+       </a>
+</p>
 
 </body>
 </html>
