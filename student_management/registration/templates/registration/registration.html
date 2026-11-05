@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
     <title>Student Registration</title>
+    <link rel="stylesheet" href="{% static 'registration/style.css' %}">
 </head>
 <body>
 
@@ -9,7 +11,6 @@
 
     <form method="POST">
         {% csrf_token %}
-
         <label>Student ID:</label>
         <input type="text" name="student_id" required>
 
@@ -46,6 +47,12 @@
 
         <button type="submit">Register Student</button>
     </form>
+
+    <p>
+       <a href="{% url 'student_list' %}">
+            View Student Directory
+       </a>
+</p>
 
 </body>
 </html>

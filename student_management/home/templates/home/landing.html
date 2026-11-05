@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
+    <link rel="stylesheet" href="{% static 'registration/style.css' %}">
 </head>
-<body>
-    <h1>Welcome to Student Management System</h1>
-    <p>This is the Landing Page </p>
+<body class="home-page">
+    <main class="home-shell">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="{% url 'landing' %}">Student<span>Hub</span></a>
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </nav>
 
-    <a href="{% url 'home' %}">
-        Go to Home Page
-    </a>
+        <section class="hero">
+            <p class="eyebrow">STUDENT MANAGEMENT SYSTEM</p>
+            <h1>Everything you need to manage student records.</h1>
+            <p class="hero-copy">Register students, find records, and keep your directory organized in one place.</p>
+            <div class="hero-actions">
+                <a class="button button-primary" href="{% url 'student_registration' %}">Register a student</a>
+                <a class="button button-light" href="{% url 'student_list' %}">Open directory</a>
+            </div>
+        </section>
+
+        <section class="quick-actions" aria-label="Student management actions">
+            <a class="action-card" href="{% url 'student_registration' %}">
+                <span class="action-icon" aria-hidden="true">+</span>
+                <span>
+                    <strong>Register Student</strong>
+                    <small>Add a new student record</small>
+                </span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="action-card" href="{% url 'student_list' %}">
+                <span class="action-icon directory-icon" aria-hidden="true">&#9776;</span>
+                <span>
+                    <strong>Student Directory</strong>
+                    <small>Search, view, and manage records</small>
+                </span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+        </section>
+    </main>
 </body>
 </html>

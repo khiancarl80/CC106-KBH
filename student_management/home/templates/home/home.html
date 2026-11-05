@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'registration/style.css' %}">
 </head>
-<body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the Home Page</p>
+<body class="home-page">
+    <main class="home-shell">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="{% url 'landing' %}">Student<span>Hub</span></a>
+            <a class="nav-link" href="{% url 'landing' %}">Welcome page</a>
+        </nav>
 
-    <a href="{% url 'landing' %}">
-        Go to Landing Page
-    </a>
+        <section class="hero hero-home">
+            <p class="eyebrow">YOUR STUDENT RECORDS, SIMPLIFIED</p>
+            <h1>Welcome to your student management home.</h1>
+            <p class="hero-copy">Choose an action to get started. Your student records are just a click away.</p>
+            <div class="hero-actions">
+                <a class="button button-primary" href="{% url 'student_registration' %}">Register a student</a>
+                <a class="button button-light" href="{% url 'student_list' %}">Open directory</a>
+            </div>
+        </section>
+
+        <section class="quick-actions" aria-label="Student management actions">
+            <a class="action-card" href="{% url 'student_registration' %}">
+                <span class="action-icon" aria-hidden="true">+</span>
+                <span>
+                    <strong>Register Student</strong>
+                    <small>Create a student record</small>
+                </span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="action-card" href="{% url 'student_list' %}">
+                <span class="action-icon directory-icon" aria-hidden="true">&#9776;</span>
+                <span>
+                    <strong>Student Directory</strong>
+                    <small>Browse and manage student records</small>
+                </span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+        </section>
+    </main>
 </body>
 </html>
