@@ -28,6 +28,10 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+<<<<<<< HEAD
+=======
+# Application definition
+>>>>>>> 8334cfc5afb2a58983832eac19673caa1666c81f
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -55,7 +59,11 @@ ROOT_URLCONF = 'student_management.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [BASE_DIR / 'templates'],
+=======
+        'DIRS': [],
+>>>>>>> 8334cfc5afb2a58983832eac19673caa1666c81f
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +78,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'student_management.wsgi.application'
 
 
+<<<<<<< HEAD
+=======
+# Database
+# https://docs.djangoproject.com/en/6.1/ref/settings/#databases
+
+>>>>>>> 8334cfc5afb2a58983832eac19673caa1666c81f
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -78,6 +92,12 @@ DATABASES = {
 }
 
 
+<<<<<<< HEAD
+=======
+# Password validation
+# https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
+
+>>>>>>> 8334cfc5afb2a58983832eac19673caa1666c81f
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -120,7 +140,10 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+<<<<<<< HEAD
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/registration/dashboard/'
 LOGOUT_REDIRECT_URL = '/login/'
+=======
+>>>>>>> 8334cfc5afb2a58983832eac19673caa1666c81f

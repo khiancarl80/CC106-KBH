@@ -1,4 +1,5 @@
 from django.contrib import admin
+<<<<<<< HEAD
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserCreationForm
@@ -75,3 +76,7 @@ class StudentAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return request.user.is_staff
+=======
+
+# Register your models here.
+>>>>>>> 8334cfc5afb2a58983832eac19673caa1666c81f
