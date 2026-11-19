@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="{% static 'registration/style.css' %}">
+</head>
+<body>
+    <main class="page">
+        <h1>Student Management Dashboard</h1>
+        <p>Welcome, {{ request.user.username }}!</p>
+        <p>You are logged in as an authorized staff user.</p>
+        <p>
+            <a class="button-link" href="{% url 'student_list' %}">Open Student Directory</a>
+        </p>
+        <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+        </form>
+    </main>
+</body>
+</html>

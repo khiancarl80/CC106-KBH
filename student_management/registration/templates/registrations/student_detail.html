@@ -1,0 +1,19 @@
+{% extends 'registrations/base.html' %}
+{% block title %}Student Details{% endblock %}
+{% block content %}
+    <h1>Student Details</h1>
+    <dl class="student-details">
+        <dt>Student ID</dt><dd>{{ student.student_id }}</dd>
+        <dt>First Name</dt><dd>{{ student.first_name }}</dd>
+        <dt>Last Name</dt><dd>{{ student.last_name }}</dd>
+        <dt>Gender</dt><dd>{{ student.gender }}</dd>
+        <dt>Date of Birth</dt><dd>{{ student.date_of_birth }}</dd>
+        <dt>Contact Number</dt><dd>{{ student.contact_number }}</dd>
+    </dl>
+    <p class="actions">
+        {% if request.user.is_staff %}
+            <a class="button-link" href="{% url 'student_update' student.pk %}">Edit Record</a>
+        {% endif %}
+        <a href="{% url 'student_list' %}">Back to Directory</a>
+    </p>
+{% endblock %}
