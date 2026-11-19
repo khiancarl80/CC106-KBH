@@ -1,0 +1,15 @@
+{% extends 'registrations/base.html' %}
+{% block title %}Confirm Delete{% endblock %}
+{% block content %}
+    <h1>Confirm Student Deletion</h1>
+    <p>
+        Are you sure you want to delete
+        <strong>{{ student.first_name }} {{ student.last_name }}</strong>
+        ({{ student.student_id }})?
+    </p>
+    <form method="post" class="actions">
+        {% csrf_token %}
+        <button class="danger" type="submit">Yes, Delete Student</button>
+        <a class="button-link secondary" href="{% url 'student_detail' student.pk %}">Cancel</a>
+    </form>
+{% endblock %}

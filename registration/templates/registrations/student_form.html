@@ -1,0 +1,11 @@
+{% extends 'registrations/base.html' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+    <h1>{{ page_title }}</h1>
+    <form method="post" class="student-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Student</button>
+        <a class="button-link secondary" href="{% url 'student_list' %}">Cancel</a>
+    </form>
+{% endblock %}
